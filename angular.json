@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "veterinariapetshop"
+  "defaultProject": "veterinariapetshop",
+  "cli": {
+    "analytics": "982d319b-b338-477c-9fd3-4914df4dd8e5"
+  }
 }
