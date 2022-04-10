@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularauthentication-dc896": {
+      "hosting": {
+        "veterinariapetshop": [
+          "angularauthentication-dc896"
+        ]
+      }
+    }
+  }
+}
