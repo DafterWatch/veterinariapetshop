@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class PagprincipalComponent implements OnInit {
   public productos: Observable<any>[] = [];
   constructor(private router:Router,afDB: AngularFireDatabase){
-    const itemsRef: AngularFireList<any> = afDB.list('Productos');
+    const itemsRef: AngularFireList<any> = afDB.list('Veterinarias_PetShops');
     itemsRef.valueChanges()
     .subscribe(
       x=>{
