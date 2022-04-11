@@ -8,7 +8,4 @@ import { Observable } from 'rxjs';
 export class VetServiceService {
 
   constructor(private firestore: AngularFirestore) { }
-  getEmpleado(email:string):Observable<any>{
-    return this.firestore.collection('AdminGeneral').doc("mIMQ0faPV5Mg4lJYCpWg").snapshotChanges();
-  }
 }

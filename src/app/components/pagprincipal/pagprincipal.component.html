@@ -1,1 +1,10 @@
-<p>pagprincipal works!</p>
+<div class="list row m-5">
+    <div class="col-md-6">
+        <h4>Lista de Productos</h4>
+        <ul class="list-group-item">
+            <li *ngFor="let prod of productos; let i = index">
+                {{prod}}
+            </li>
+        </ul>
+    </div>
+</div>

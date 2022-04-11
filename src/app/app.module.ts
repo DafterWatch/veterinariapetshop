@@ -11,6 +11,16 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.component';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCG4qCrYXtAO8GtmQVdPHNCAm6HvD2ZG98",
+  authDomain: "app-vet-ce680.firebaseapp.com",
+  databaseURL: "https://app-vet-ce680-default-rtdb.firebaseio.com",
+  projectId: "app-vet-ce680",
+  storageBucket: "app-vet-ce680.appspot.com",
+  messagingSenderId: "1009334479274",
+  appId: "1:1009334479274:web:433c8653e92eafbdc8e3d3",
+  measurementId: "G-B5BG4M5QE6"
+};
 
 @NgModule({
   declarations: [
@@ -23,7 +33,7 @@ import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.co
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
   ],
   providers: [],

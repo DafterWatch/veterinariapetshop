@@ -5,27 +5,37 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { VetServiceService } from 'src/app/services/vet-service.service';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
-  items: Observable<any[]>;
+  
+  public usuarios: Observable<any>[] = [];
   loginUsuario: FormGroup;
   submitted = false;
   validLogin = false;
-  constructor(private fb: FormBuilder, private router:Router,firestore: AngularFirestore) {
+  constructor(private fb: FormBuilder, private router:Router,afDB: AngularFireDatabase){
     this.loginUsuario = this.fb.group({
       email:['', Validators.required],
       pass:['', Validators.required]
     })
-    this.items = firestore.collection('AdminGeneral').valueChanges();
+    const itemsRef: AngularFireList<any> = afDB.list('AdminGeneral');
+    itemsRef.valueChanges()
+    .subscribe(
+      x=>{
+        this.usuarios = x;
+      }
+    )
     this.validLogin = true;
-   }
-
+  }
   ngOnInit(): void {
+      
   }
   texto = "";
   iniciarSesion(email: string, pass: string){
@@ -33,20 +43,19 @@ export class LoginComponent implements OnInit {
     if(this.loginUsuario.invalid){
       return;
     }
-    let i = 0;
-    this.items.forEach(element => {     
-      if(element[i].Correo == email){
-        if(element[i].Contraseña == pass){
-          this.validLogin = true;
-          this.router.navigate(['/pagprincipal']);      
-        } else {
-          this.validLogin = false;
-        }
+    const usuariosJson = JSON.stringify(this.usuarios);
+    const _usuariosJson = JSON.parse(usuariosJson);
+    console.log(_usuariosJson[2]);
+    
+    if(_usuariosJson[2] == email){
+      if(_usuariosJson[1]  == pass){
+        this.validLogin = true;
+        this.router.navigate(['/pagprincipal']);      
       } else {
         this.validLogin = false;
-      }
-      i++
-    });    
+      }    
+    } else {
+      this.validLogin = false;
+    }
   }
-
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pagprincipal',
@@ -6,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagprincipal.component.scss']
 })
 export class PagprincipalComponent implements OnInit {
-
-  constructor() { }
-
+  public productos: Observable<any>[] = [];
+  constructor(private router:Router,afDB: AngularFireDatabase){
+    const itemsRef: AngularFireList<any> = afDB.list('Productos');
+    itemsRef.valueChanges()
+    .subscribe(
+      x=>{
+        this.productos = x;
+      }
+    )
+  }
   ngOnInit(): void {
   }
 
