@@ -14,41 +14,41 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit {
-  
-  public usuarios: Observable<any>[] = [];
+export class LoginComponent implements OnInit {  
+  usuarios: any[] = [];
   loginUsuario: FormGroup;
   submitted = false;
   validLogin = false;
-  constructor(private fb: FormBuilder, private router:Router,afDB: AngularFireDatabase){
+  constructor(private fb: FormBuilder, private router:Router, private _productosServices:VetServiceService){
     this.loginUsuario = this.fb.group({
       email:['', Validators.required],
       pass:['', Validators.required]
     })
-    const itemsRef: AngularFireList<any> = afDB.list('AdminGeneral');
-    itemsRef.valueChanges()
-    .subscribe(
-      x=>{
-        this.usuarios = x;
-      }
-    )
     this.validLogin = true;
   }
   ngOnInit(): void {
-      
+    this.getUsuario();
   }
   texto = "";
+  getUsuario(){
+    this._productosServices.getAdminVet().subscribe(data => {
+      this.usuarios = [];
+      data.forEach((element:any) => {
+        this.usuarios.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+    })
+  }
   iniciarSesion(email: string, pass: string){
+    this.getUsuario();
     this.submitted = true;
     if(this.loginUsuario.invalid){
       return;
     }
-    const usuariosJson = JSON.stringify(this.usuarios);
-    const _usuariosJson = JSON.parse(usuariosJson);
-    console.log(_usuariosJson[2]);
-    
-    if(_usuariosJson[2] == email){
-      if(_usuariosJson[1]  == pass){
+    if(this.usuarios[0].Correo == email){
+      if(this.usuarios[0].Contraseña == pass){
         this.validLogin = true;
         this.router.navigate(['/pagprincipal']);      
       } else {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VetServiceService } from 'src/app/services/vet-service.service';
 
 
 @Component({
@@ -8,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagprincipalComponent implements OnInit {
  
-  constructor(){
+  constructor(private _productosServices:VetServiceService){
   }
+  vetPetShopItems: any[] = [];
   ngOnInit(): void {
-    
+    this.getEmpleados();
   }
-  
+  getEmpleados(){
+    this._productosServices.getVetPetShop().subscribe(data => {
+      this.vetPetShopItems = [];
+      data.forEach((element:any) => {
+        this.vetPetShopItems.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+    })
+  }
 }

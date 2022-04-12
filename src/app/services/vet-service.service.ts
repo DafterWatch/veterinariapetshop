@@ -23,4 +23,10 @@ export class VetServiceService {
   getProducto(id:string):Observable<any>{
     return this.firestore.collection('Productos').doc(id).snapshotChanges();
   }
+  getVetPetShop(): Observable<any>{
+    return this.firestore.collection('Vet-PetShop').snapshotChanges();
+  }
+  getAdminVet(): Observable<any>{
+    return this.firestore.collection('Admin_vet').snapshotChanges();
+  }
 }

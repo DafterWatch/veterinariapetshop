@@ -7,13 +7,13 @@ import { MenuproductosComponent } from './components/menuproductos/menuproductos
 import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'menuproductos', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'pagprincipal', component: PagprincipalComponent },
   { path: 'menuproductos', component: MenuproductosComponent },
   { path: 'crearproducto', component: CrearproductoComponent },
   { path: 'editarproducto/:id', component: EditarproductoComponent },
-  { path: '**', redirectTo: 'menuproductos', pathMatch: 'full'},
+  { path: '**', redirectTo: 'login', pathMatch: 'full'},
 ];
 
 @NgModule({

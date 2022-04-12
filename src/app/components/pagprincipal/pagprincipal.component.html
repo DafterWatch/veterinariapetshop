@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="card">
+      <div class="card-body">
+        <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Cerrar Sesion</button> 
+          <span class="h1">Veterinaria - Pet Shop</span>          
+          <ul class="list-group mt-3" *ngFor="let item of vetPetShopItems">
+            <li class="list-group-item">Nombre: {{item.Nombre}}</li>
+            <li class="list-group-item">Dirección: {{item.Direccion}}</li>
+            <li class="list-group-item">Telefono: {{item.Telefono}}</li>
+            <li class="list-group-item">Ubicación: {{item.Ubicacion}}</li>
+          </ul>
+          <button class="btn btn-lg btn-primary mt-4" routerLink="/menuproductos">Ir Menu Productos</button>      
+      </div>
+  </div>
+</div>

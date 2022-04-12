@@ -15,8 +15,6 @@ export class MenuproductosComponent implements OnInit {
   ngOnInit(): void {
     this.getEmpleados();
   }
-  modificar(){
-  }
   getEmpleados(){
     this._productosServices.getProductos().subscribe(data => {
       this.productos = [];
