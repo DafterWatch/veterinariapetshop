@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { VetServiceService } from 'src/app/services/vet-service.service';
 
 @Component({
   selector: 'app-pagprincipal',
@@ -9,17 +9,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pagprincipal.component.scss']
 })
 export class PagprincipalComponent implements OnInit {
-  public productos: Observable<any>[] = [];
-  constructor(private router:Router,afDB: AngularFireDatabase){
-    const itemsRef: AngularFireList<any> = afDB.list('Veterinarias_PetShops');
-    itemsRef.valueChanges()
-    .subscribe(
-      x=>{
-        this.productos = x;
-      }
-    )
+  productos: any[] = [];
+  constructor(private router:Router, private _productosServices:VetServiceService){
   }
   ngOnInit(): void {
+    this.getEmpleados();
   }
-
+  modificar(){
+  }
+  eliminar(){
+  }
+  getEmpleados(){
+    this._productosServices.getProductos().subscribe(data => {
+      this.productos = [];
+      data.forEach((element:any) => {
+        this.productos.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+      console.log(this.productos);
+    })
+  }
 }
