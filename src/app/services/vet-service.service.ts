@@ -11,4 +11,16 @@ export class VetServiceService {
   getProductos(): Observable<any>{
     return this.firestore.collection('Productos', ref => ref.orderBy('Nombre', 'asc')).snapshotChanges();
   }
+  agregarProducto(producto: any): Promise<any>{
+    return this.firestore.collection('Productos').add(producto);
+  }
+  eliminarProducto(id: string): Promise<any>{
+    return this.firestore.collection('Productos').doc(id).delete();
+  }
+  actualizarProducto(id: string, data:any): Promise<any>{
+    return this.firestore.collection('Productos').doc(id).update(data);
+  }
+  getProducto(id:string):Observable<any>{
+    return this.firestore.collection('Productos').doc(id).snapshotChanges();
+  }
 }

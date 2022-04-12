@@ -1,0 +1,27 @@
+<div class="container p-5">
+    <button class="btn btn-lg btn-primary" routerLink="/login">Volver</button>
+    <br>
+    <br>
+    <button class="btn btn-lg btn-primary" style="display:flex;" routerLink="/crearproducto">Agregar Nuevo Producto</button>    
+    <br>
+    <h1>Lista de Productos</h1>   
+    <br>  
+    <table class="table">
+        <thead>
+          <tr style="color: blue;">
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Unidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{producto.Nombre}}</td>
+            <td>{{producto.Cantidad}}</td>
+            <td>{{producto.Costo}}</td>
+            <td><button class="btn btn-lg btn-primary" [routerLink]="['/editarproducto/', producto.id]">Modificar</button></td>
+            <td><button class="btn btn-lg btn-primary" (click)="eliminarProducto(producto.id);">Eliminar</button></td>
+          </tr>
+        </tbody>
+    </table>
+</div>

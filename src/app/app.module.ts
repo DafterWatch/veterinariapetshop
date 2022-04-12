@@ -10,6 +10,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.component';
+import { MenuproductosComponent } from './components/menuproductos/menuproductos.component';
+import { CrearproductoComponent } from './components/crearproducto/crearproducto.component';
+import { EditarproductoComponent } from './components/editarproducto/editarproducto.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCG4qCrYXtAO8GtmQVdPHNCAm6HvD2ZG98",
@@ -27,7 +30,10 @@ const firebaseConfig = {
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    PagprincipalComponent
+    PagprincipalComponent,
+    MenuproductosComponent,
+    CrearproductoComponent,
+    EditarproductoComponent
   ],
   imports: [
     BrowserModule,
