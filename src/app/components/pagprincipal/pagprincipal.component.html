@@ -7,7 +7,7 @@
             <li class="list-group-item">Nombre: {{item.Nombre}}</li>
             <li class="list-group-item">Dirección: {{item.Direccion}}</li>
             <li class="list-group-item">Telefono: {{item.Telefono}}</li>
-            <li class="list-group-item">Ubicación: {{item.Ubicacion}}</li>
+            <li class="list-group-item">Ubicación: {{item.Ubicacion._lat+" "+item.Ubicacion._long}}</li>
           </ul>
           <button class="btn btn-lg btn-primary mt-4" routerLink="/menuproductos">Ir Menu Productos</button>      
       </div>

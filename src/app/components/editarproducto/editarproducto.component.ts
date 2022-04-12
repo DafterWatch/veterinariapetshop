@@ -25,7 +25,7 @@ export class EditarproductoComponent implements OnInit {
       this._vetService.getProducto(this.id).subscribe(data => {
         this.createProducto.setValue({
           Nombre: data.payload.data()['Nombre'],
-          Descripcion: data.payload.data()['Descripción'],
+          Descripcion: data.payload.data()['Descripcion'],
           Establecimiento: data.payload.data()['Establecimiento'],
           Costo: data.payload.data()['Costo'],
           Cantidad: data.payload.data()['Cantidad']
@@ -39,7 +39,7 @@ export class EditarproductoComponent implements OnInit {
     if(this.id !== null){
       const producto:any = {
         Nombre: this.createProducto.value.Nombre,
-        Descripcion: this.createProducto.value.Descripción,
+        Descripcion: this.createProducto.value.Descripcion,
         Establecimiento: this.createProducto.value.Establecimiento,
         Costo: this.createProducto.value.Costo,
         Cantidad: this.createProducto.value.Cantidad,
