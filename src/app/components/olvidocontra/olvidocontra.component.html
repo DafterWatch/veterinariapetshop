@@ -1,0 +1,14 @@
+<div class="container">
+    <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Volver</button>
+    <div class="row">
+        <div class="m-4">            
+            <h3>Correo electronico</h3>
+            <input type="email" style="width: 500px;"
+              placeholder="Ingrese un correo electronico valido" #email/>
+              <br>
+            <h4 *ngIf="seEncontro">{{contra}}</h4>
+            <button class="btn btn-lg btn-primary m-2 float-start" (click)="verificar(email.value)">Verificar</button>
+            <div class="row">
+          </div>
+    </div>
+</div>

@@ -5,6 +5,7 @@ import { EditarproductoComponent } from './components/editarproducto/editarprodu
 import { LoginComponent } from './components/login/login.component';
 import { MenuproductosComponent } from './components/menuproductos/menuproductos.component';
 import { MenusemevetComponent } from './components/menusemevet/menusemevet.component';
+import { OlvidocontraComponent } from './components/olvidocontra/olvidocontra.component';
 import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'crearproducto', component: CrearproductoComponent },
   { path: 'editarproducto/:id', component: EditarproductoComponent },
   { path: 'editarsemevet', component: MenusemevetComponent },
+  { path: 'olvidocontra', component: OlvidocontraComponent },
   { path: '**', redirectTo: 'login', pathMatch: 'full'},
 ];
 
