@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
           id: element.payload.doc.id,
           ...element.payload.doc.data()
         })
+        console.log(this.usuarios);
+        
       });
     })
   }

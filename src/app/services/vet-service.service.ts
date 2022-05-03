@@ -29,4 +29,7 @@ export class VetServiceService {
   getAdminVet(): Observable<any>{
     return this.firestore.collection('Admin_vet').snapshotChanges();
   }
+  actualizarVetPetShop(id: string, data:any): Promise<any>{
+    return this.firestore.collection('Vet-PetShop').doc(id).update(data);
+  }
 }

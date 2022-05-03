@@ -13,6 +13,7 @@ import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.co
 import { MenuproductosComponent } from './components/menuproductos/menuproductos.component';
 import { CrearproductoComponent } from './components/crearproducto/crearproducto.component';
 import { EditarproductoComponent } from './components/editarproducto/editarproducto.component';
+import { MenusemevetComponent } from './components/menusemevet/menusemevet.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCG4qCrYXtAO8GtmQVdPHNCAm6HvD2ZG98",
@@ -33,7 +34,8 @@ const firebaseConfig = {
     PagprincipalComponent,
     MenuproductosComponent,
     CrearproductoComponent,
-    EditarproductoComponent
+    EditarproductoComponent,
+    MenusemevetComponent
   ],
   imports: [
     BrowserModule,

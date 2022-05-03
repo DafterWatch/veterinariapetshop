@@ -24,8 +24,6 @@ export class PagprincipalComponent implements OnInit {
           ...element.payload.doc.data()
         })
       });
-      console.log(this.vetPetShopItems[0].Ubicacion);
-      
     })
   }
 }
