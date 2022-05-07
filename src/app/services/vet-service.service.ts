@@ -32,4 +32,13 @@ export class VetServiceService {
   actualizarVetPetShop(id: string, data:any): Promise<any>{
     return this.firestore.collection('Vet-PetShop').doc(id).update(data);
   }
+  agregarRegistro(registro: any): Promise<any>{
+    return this.firestore.collection('ReporteProductos').add(registro);
+  }
+  getRegistros(): Observable<any>{
+    return this.firestore.collection('ReporteProductos', ref => ref.orderBy('fecha', 'desc')).snapshotChanges();
+  }
+  eliminarRegistro(id: string): Promise<any>{
+    return this.firestore.collection('ReporteProductos').doc(id).delete();
+  }
 }

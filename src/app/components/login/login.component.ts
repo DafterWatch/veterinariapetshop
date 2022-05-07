@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
     if(this.usuarios[0].Correo == email){
       if(this.usuarios[0].Contraseña == pass){
         this.validLogin = true;
+        sessionStorage.setItem('idUsuario', this.usuarios[0].id);
         this.router.navigate(['/pagprincipal']);      
       } else {
         this.validLogin = false;

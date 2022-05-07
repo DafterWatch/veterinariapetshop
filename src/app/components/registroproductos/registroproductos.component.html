@@ -1,0 +1,23 @@
+<div class="container p-5">
+      <button class="btn btn-lg btn-primary" routerLink="/menuproductos">Volver</button>       
+      <br>
+      <h1>Lista de Registros en los Productos</h1>   
+      <br>  
+      <table class="table">
+          <thead>
+            <tr style="color: blue;">
+              <th scope="col">Id Usuario</th>
+              <th scope="col">Acción</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let registro of registros">
+              <td>{{registro.idUsuario}}</td>
+              <td>{{registro.accion}}</td>
+              <td>{{registro.fecha}}</td>
+              <td><button class="btn btn-lg btn-primary" (click)="eliminarRegistro(registro.id);">Eliminar</button></td>
+            </tr>
+          </tbody>
+      </table>
+  </div>

@@ -44,9 +44,30 @@ export class EditarproductoComponent implements OnInit {
         Costo: this.createProducto.value.Costo,
         Cantidad: this.createProducto.value.Cantidad,
       }
-      this._vetService.actualizarProducto(this.id, producto).then(() => {      
+      this.agregarRegistro()  
+      this._vetService.actualizarProducto(this.id, producto).then(() => {        
         this.router.navigate(['/menuproductos']);
       })
     } 
+  }
+  agregarRegistro(){
+    let id = sessionStorage.getItem('idUsuario');
+    this.submitted = true;
+    const fechaHoy = new Date()
+    fechaHoy.toDateString()
+    if(this.createProducto.invalid){
+      return;
+    }
+    const registro:any = {
+      accion: "modificación",
+      fecha: fechaHoy+"",
+      idUsuario: id
+    } 
+    
+    this._vetService.agregarRegistro(registro).then(() => {      
+      this.router.navigate(['/menuproductos']);
+    }).catch(error =>{      
+      console.log(error);
+    })
   }
 }

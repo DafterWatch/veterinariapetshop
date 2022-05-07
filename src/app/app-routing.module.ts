@@ -7,12 +7,14 @@ import { MenuproductosComponent } from './components/menuproductos/menuproductos
 import { MenusemevetComponent } from './components/menusemevet/menusemevet.component';
 import { OlvidocontraComponent } from './components/olvidocontra/olvidocontra.component';
 import { PagprincipalComponent } from './components/pagprincipal/pagprincipal.component';
+import { RegistroproductosComponent } from './components/registroproductos/registroproductos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'pagprincipal', component: PagprincipalComponent },
   { path: 'menuproductos', component: MenuproductosComponent },
+  { path: 'registroproductos', component: RegistroproductosComponent },
   { path: 'crearproducto', component: CrearproductoComponent },
   { path: 'editarproducto/:id', component: EditarproductoComponent },
   { path: 'editarsemevet', component: MenusemevetComponent },
