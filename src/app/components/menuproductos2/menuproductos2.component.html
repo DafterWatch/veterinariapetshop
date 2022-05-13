@@ -1,11 +1,9 @@
 <div class="container p-5">
   <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Cerrar Sesion</button>
-    <button class="btn btn-lg btn-primary" routerLink="/pagprincipal">Volver</button>
+    <button class="btn btn-lg btn-primary" routerLink="/pagprincipaladmin">Volver</button>
     <br>
     <br>
-    <button class="btn btn-lg btn-primary" style="display:flex;" routerLink="/registroproductos">Registro Productos</button>
-    <br>
-    <button class="btn btn-lg btn-primary" style="display:flex;" routerLink="/crearproducto">Agregar Nuevo Producto</button>
+    <button class="btn btn-lg btn-primary" style="display:flex;" routerLink="/crearproducto2">Agregar Nuevo Producto</button>
      
     <br>
     <h1>Lista de Productos</h1>   
@@ -23,7 +21,7 @@
             <td>{{producto.Nombre}}</td>
             <td>{{producto.Cantidad}}</td>
             <td>{{producto.Costo}} Bs</td>
-            <td><button class="btn btn-lg btn-primary" [routerLink]="['/editarproducto/', producto.id]">Modificar</button></td>
+            <td><button class="btn btn-lg btn-primary" [routerLink]="['/editarproducto2/', producto.id]">Modificar</button></td>
             <td><button class="btn btn-lg btn-primary" (click)="eliminarProducto(producto.id);">Eliminar</button></td>
           </tr>
         </tbody>

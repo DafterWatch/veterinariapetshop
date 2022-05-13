@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VetServiceService } from '../services/vet-service.service';
+import { VetServiceService } from 'src/app/services/vet-service.service';
 
 @Component({
   selector: 'app-pagprincipaladmin',
