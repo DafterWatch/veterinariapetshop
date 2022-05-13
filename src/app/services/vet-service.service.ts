@@ -61,4 +61,7 @@ export class VetServiceService {
   eliminarVacuna(id: string): Promise<any>{
     return this.firestore.collection('Vacuna').doc(id).delete();
   }
+  getAdminVetDeverdad(): Observable<any>{
+    return this.firestore.collection('Admin_Gen').snapshotChanges();
+  }
 }

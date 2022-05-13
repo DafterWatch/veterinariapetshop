@@ -19,6 +19,8 @@ import { RegistroproductosComponent } from './components/registroproductos/regis
 import { MenuusuariosComponent } from './components/menuusuarios/menuusuarios.component';
 import { MenumascotasComponent } from './components/menumascotas/menumascotas.component';
 import { MenuvacunasComponent } from './components/menuvacunas/menuvacunas.component';
+import { PagprincipaladminComponent } from './pagprincipaladmin/pagprincipaladmin.component';
+import { Menuproductos2Component } from './components/menuproductos2/menuproductos2.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCG4qCrYXtAO8GtmQVdPHNCAm6HvD2ZG98",
@@ -45,7 +47,9 @@ const firebaseConfig = {
     RegistroproductosComponent,
     MenuusuariosComponent,
     MenumascotasComponent,
-    MenuvacunasComponent
+    MenuvacunasComponent,
+    PagprincipaladminComponent,
+    Menuproductos2Component
   ],
   imports: [
     BrowserModule,
