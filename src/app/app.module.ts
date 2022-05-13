@@ -16,6 +16,9 @@ import { EditarproductoComponent } from './components/editarproducto/editarprodu
 import { MenusemevetComponent } from './components/menusemevet/menusemevet.component';
 import { OlvidocontraComponent } from './components/olvidocontra/olvidocontra.component';
 import { RegistroproductosComponent } from './components/registroproductos/registroproductos.component';
+import { MenuusuariosComponent } from './components/menuusuarios/menuusuarios.component';
+import { MenumascotasComponent } from './components/menumascotas/menumascotas.component';
+import { MenuvacunasComponent } from './components/menuvacunas/menuvacunas.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCG4qCrYXtAO8GtmQVdPHNCAm6HvD2ZG98",
@@ -39,7 +42,10 @@ const firebaseConfig = {
     EditarproductoComponent,
     MenusemevetComponent,
     OlvidocontraComponent,
-    RegistroproductosComponent
+    RegistroproductosComponent,
+    MenuusuariosComponent,
+    MenumascotasComponent,
+    MenuvacunasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<div class="container p-5">
+      <button class="btn btn-lg btn-primary" routerLink="/pagprincipal">Volver</button>
+      <br>       
+      <br>
+      <h1>Lista de Usuarios</h1>   
+      <br>  
+      <table class="table">
+          <thead>
+            <tr style="color: blue;">
+              <th scope="col">CI</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Telefono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td>{{usuario.CI}}</td>
+              <td>{{usuario.Nombre}}</td>
+              <td>{{usuario.Correo}}</td>
+              <td>{{usuario.Telefono}}</td>
+              <td><button class="btn btn-lg btn-primary" (click)="eliminarUsuario(usuario.id);">Eliminar</button></td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
