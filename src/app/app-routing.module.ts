@@ -4,11 +4,13 @@ import { CrearproductoComponent } from './components/crearproducto/crearproducto
 import { Crearproducto2Component } from './components/crearproducto2/crearproducto2.component';
 import { EditarproductoComponent } from './components/editarproducto/editarproducto.component';
 import { Editarproducto2Component } from './components/editarproducto2/editarproducto2.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenumascotasComponent } from './components/menumascotas/menumascotas.component';
 import { MenuproductosComponent } from './components/menuproductos/menuproductos.component';
 import { Menuproductos2Component } from './components/menuproductos2/menuproductos2.component';
 import { MenusemevetComponent } from './components/menusemevet/menusemevet.component';
+import { Menusemevet2Component } from './components/menusemevet2/menusemevet2.component';
 import { MenuusuariosComponent } from './components/menuusuarios/menuusuarios.component';
 import { MenuvacunasComponent } from './components/menuvacunas/menuvacunas.component';
 import { OlvidocontraComponent } from './components/olvidocontra/olvidocontra.component';
@@ -17,8 +19,9 @@ import { PagprincipaladminComponent } from './components/pagprincipaladmin/pagpr
 import { RegistroproductosComponent } from './components/registroproductos/registroproductos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
+  { path: 'inicio', component: InicioComponent },
   { path: 'pagprincipal', component: PagprincipalComponent },
   { path: 'pagprincipaladmin', component: PagprincipaladminComponent },
   { path: 'menuproductos', component: MenuproductosComponent },
@@ -32,6 +35,7 @@ const routes: Routes = [
   { path: 'editarproducto/:id', component: EditarproductoComponent },
   { path: 'editarproducto2/:id', component: Editarproducto2Component },
   { path: 'editarsemevet', component: MenusemevetComponent },
+  { path: 'editarsemevet2', component: Menusemevet2Component },
   { path: 'olvidocontra', component: OlvidocontraComponent },
   { path: '**', redirectTo: 'login', pathMatch: 'full'},
 ];

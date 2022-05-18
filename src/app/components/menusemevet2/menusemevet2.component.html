@@ -1,0 +1,28 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Modificar Información SEMEVET</h3>
+                    <span *ngIf="submitted && modificarInformacion.invalid" class="badge bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                    <form class="mt-4" [formGroup]="modificarInformacion" (ngSubmit)="editarInformacion()">
+                        <h4 class="float-start">Nombre</h4>
+                        <input type="text" class="form-control form-control-lg mt-3 mb-2" formControlName="Nombre" placeholder="Nombre"> 
+                        <h4 class="float-start">Dirección</h4>
+                        <input type="text" class="form-control form-control-lg mt-3 mb-2" formControlName="Direccion" placeholder="Direccion">
+                        <h4 class="float-start">Telefono</h4>
+                        <input type="text" class="form-control form-control-lg mt-3 mb-2" formControlName="Telefono" placeholder="Telefono">
+                        <h4 class="float-start">Ubicación Latitud</h4>
+                        <input type="number" class="form-control form-control-lg mt-3 mb-2" formControlName="UbicacionLat" placeholder="UbicacionLat">
+                        <h4 class="float-start">Ubicación Longitud</h4>
+                        <input type="number" class="form-control form-control-lg mt-3 mb-2" formControlName="UbicacionLon" placeholder="UbicacionLon">
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/pagprincipaladmin">Cancelar</button>
+                            <button type="submit" class="btn btn-dark btn-lg" (click)="editarInformacion();">Modificar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
