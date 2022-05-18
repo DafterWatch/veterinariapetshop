@@ -19,7 +19,7 @@ import { PagprincipaladminComponent } from './components/pagprincipaladmin/pagpr
 import { RegistroproductosComponent } from './components/registroproductos/registroproductos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'pagprincipal', component: PagprincipalComponent },
