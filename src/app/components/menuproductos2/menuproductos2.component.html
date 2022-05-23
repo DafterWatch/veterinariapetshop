@@ -16,6 +16,7 @@ background-size: 100% 100%;">
         <thead>
           <tr style="color: white">
             <th scope="col">Producto</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio Unidad</th>
           </tr>
@@ -23,6 +24,7 @@ background-size: 100% 100%;">
         <tbody style="color: white">
           <tr *ngFor="let producto of productos">
             <td>{{producto.Nombre}}</td>
+            <td><img src="{{producto.Imagen}}" style="height: 75px; width: 75px;"></td>
             <td>{{producto.Cantidad}}</td>
             <td>{{producto.Costo}} Bs</td>
             <td><button style="background-color: #003ca1;" class="btn btn-lg btn-primary" [routerLink]="['/editarproducto2/', producto.id]">Modificar</button></td>

@@ -12,6 +12,7 @@
         <thead>
           <tr style="color: blue;">
             <th scope="col">Producto</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio Unidad</th>
           </tr>
@@ -19,6 +20,7 @@
         <tbody>
           <tr *ngFor="let producto of productos">
             <td>{{producto.Nombre}}</td>
+            <td><img src="{{producto.Imagen}}" style="height: 75px; width: 75px;"></td>
             <td>{{producto.Cantidad}}</td>
             <td>{{producto.Costo}} Bs</td>
             <td><button class="btn btn-lg btn-primary" [routerLink]="['/editarproducto/', producto.id]">Modificar</button></td>

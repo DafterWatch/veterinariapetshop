@@ -25,6 +25,7 @@ export class MenuproductosComponent implements OnInit {
         })
       });
     })
+    
   }
   eliminarProducto(id: string){
     this._productosServices.eliminarProducto(id).then(()=>{

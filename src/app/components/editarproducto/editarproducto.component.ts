@@ -15,6 +15,7 @@ export class EditarproductoComponent implements OnInit {
   constructor(private fb: FormBuilder, private _vetService: VetServiceService, private router:Router, private aRoute: ActivatedRoute) { 
     this.createProducto = this.fb.group({
       Nombre:['', Validators.required],
+      Imagen:['', Validators.required],
       Descripcion:['', Validators.required],
       Establecimiento:['', Validators.required],
       Costo:['', Validators.required],
@@ -25,11 +26,14 @@ export class EditarproductoComponent implements OnInit {
       this._vetService.getProducto(this.id).subscribe(data => {
         this.createProducto.setValue({
           Nombre: data.payload.data()['Nombre'],
+          Imagen: data.payload.data()['Imagen'],
           Descripcion: data.payload.data()['Descripcion'],
           Establecimiento: data.payload.data()['Establecimiento'],
           Costo: data.payload.data()['Costo'],
           Cantidad: data.payload.data()['Cantidad']
         })
+        console.log(this.createProducto.value);
+        
       })
     }    
   }
@@ -39,6 +43,7 @@ export class EditarproductoComponent implements OnInit {
     if(this.id !== null){
       const producto:any = {
         Nombre: this.createProducto.value.Nombre,
+        Imagen: this.createProducto.value.Imagen,
         Descripcion: this.createProducto.value.Descripcion,
         Establecimiento: this.createProducto.value.Establecimiento,
         Costo: this.createProducto.value.Costo,
