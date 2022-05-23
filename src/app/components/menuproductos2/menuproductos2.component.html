@@ -1,29 +1,34 @@
-<div class="container p-5">
-  <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Cerrar Sesion</button>
-    <button class="btn btn-lg btn-primary" routerLink="/pagprincipaladmin">Volver</button>
+<div style="background-color: #00a8c5">
+<div class="container p-5" style="background-image:url('../../../assets/Images/semevet3.png'); background-repeat: no-repeat;
+background-size: 100% 100%;">
+  <button style="background-color: #003ca1;" class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Cerrar Sesion</button>
+    <button style="background-color: #003ca1;" class="btn btn-lg btn-primary" routerLink="/pagprincipaladmin">Volver a la página de Administrador</button>
     <br>
     <br>
-    <button class="btn btn-lg btn-primary" style="display:flex;" routerLink="/crearproducto2">Agregar Nuevo Producto</button>
-     
     <br>
-    <h1>Lista de Productos</h1>   
-    <br>  
+    <br>
+    <button style="background-color: #003ca1;" class="btn btn-lg btn-primary" routerLink="/crearproducto2">Agregar Nuevo Producto</button>
+
+    <br>
+    <h1 style="color: white" >Reporte Actual de productos en la Pet-Shop</h1>
+    <br>
     <table class="table">
         <thead>
-          <tr style="color: blue;">
+          <tr style="color: white">
             <th scope="col">Producto</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio Unidad</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="color: white">
           <tr *ngFor="let producto of productos">
             <td>{{producto.Nombre}}</td>
             <td>{{producto.Cantidad}}</td>
             <td>{{producto.Costo}} Bs</td>
-            <td><button class="btn btn-lg btn-primary" [routerLink]="['/editarproducto2/', producto.id]">Modificar</button></td>
-            <td><button class="btn btn-lg btn-primary" (click)="eliminarProducto(producto.id);">Eliminar</button></td>
+            <td><button style="background-color: #003ca1;" class="btn btn-lg btn-primary" [routerLink]="['/editarproducto2/', producto.id]">Modificar</button></td>
+            <td><button style="background-color: #003ca1;" class="btn btn-lg btn-primary" (click)="eliminarProducto(producto.id);">Eliminar</button></td>
           </tr>
         </tbody>
     </table>
+</div>
 </div>

@@ -1,19 +1,45 @@
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-body">
-          <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login">Cerrar Sesion</button> 
-          <span class="h1">SEMEVET</span>          
-          <ul class="list-group mt-3" *ngFor="let item of vetPetShopItems">
-            <li class="list-group-item">Nombre: {{item.Nombre}}</li>
-            <li class="list-group-item">Dirección: {{item.Direccion}}</li>
-            <li class="list-group-item">Telefono: {{item.Telefono}}</li>
-            <li class="list-group-item">Ubicación: {{item.Ubicacion._lat+" "+item.Ubicacion._long}}</li>
-          </ul>
-         <br> 
-          <button class="btn btn-lg btn-primary mt-4" routerLink="/editarsemevet2">Modificar datos Veterinaria</button>
-  
-          <br>
-            <button class="btn btn-lg btn-primary mt-4" routerLink="/menuproductos2">Visualizar productos</button>
+
+    <div class="container mt-5 mb-5">
+      <div class="card-body">
+        <button class="btn btn-lg btn-primary m-2 float-end" routerLink="/login" style="background-color: #003ca1;">Cerrar Sesion</button>
+        <span class="h1" style="color: white;">BIENVENIDO ADMINISTRADOR VETERINARIA</span>
+        <ul class="list-group mt-3" *ngFor="let item of vetPetShopItems">
+          <li class="list-group-item">Datos actuales de la veterinaria: </li>
+          <li class="list-group-item">Nombre: {{item.Nombre}}</li>
+          <li class="list-group-item">Dirección: {{item.Direccion}}</li>
+          <li class="list-group-item">Telefono: {{item.Telefono}}</li>
+          <li class="list-group-item">Ubicación: {{item.Ubicacion._lat+" "+item.Ubicacion._long}}</li>
+        </ul>
+       <br>
+
+        <br>
+      </div>
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="docbox mt-3 mb-3">
+                  <img src="../../../assets/Images/datosvet.jpg">
+                  <button style="background-color: #003ca1;" class="btn btn-lg btn-primary mt-4" routerLink="/editarsemevet2">¿Modificar datos Veterinaria?</button>
+                  <br>
+              </div>
+              <br>
+          </div>
+          <div class="col-lg-4">
+            <div class="docbox mt-3 mb-3">
+                <img src="../../../assets/Images/perrito.jpg">
+
+                <br>
+            </div>
+            <br>
         </div>
-    </div>
+        <div class="col-lg-4">
+          <div class="docbox mt-3 mb-3">
+              <img src="../../../assets/Images/product.jpg">
+              <button style="background-color: #003ca1;" class="btn btn-lg btn-primary mt-4" routerLink="/menuproductos2">Visualizar productos de la Pet-Shop</button>
+              <br>
+          </div>
+          <br>
+      </div>
+      </div>
   </div>
+
+
