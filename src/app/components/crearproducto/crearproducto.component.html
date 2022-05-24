@@ -7,6 +7,7 @@
                     <span *ngIf="submitted && createProducto.invalid" class="badge bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
                     <form class="mt-4" [formGroup]="createProducto" (ngSubmit)="agregarProducto()">
                         <input type="text" class="form-control form-control-lg mt-3" formControlName="Nombre" placeholder="Nombre">
+                        <textarea class="form-control form-control-lg mt-3" formControlName="Imagen" placeholder="Imagen" rows="3"></textarea>
                         <input type="text" class="form-control form-control-lg mt-3" formControlName="Descripcion" placeholder="Descripcion">
                         <input type="text" class="form-control form-control-lg mt-3" formControlName="Establecimiento" placeholder="Establecimiento">
                         <input type="number" class="form-control form-control-lg mt-3" formControlName="Costo" placeholder="Costo">
